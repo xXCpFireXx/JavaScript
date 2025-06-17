@@ -13,22 +13,3 @@ Este repositorio contiene ejemplos y ejercicios para aprender a manipular el DOM
 | `05_ejercicio-cambiar-fondo/` | Cambia el fondo de la página al hacer clic |
 | `06_ejercicio-lista-dinamica/` | Agrega elementos a una lista desde un input |
 | `07_ejercicio-toggle-parrafo/` | Muestra/oculta un párrafo con un botón |
-
-## 💡 Cómo usarlo
-
-1. Descarga el ZIP o clona el repositorio.
-2. Abre cada carpeta y ejecuta el archivo `index.html` en un navegador.
-3. Explora el código y modifica lo que necesites.
-
-## ✅ Requisitos
-
-- Navegador web moderno (Chrome, Firefox, etc.)
-- Editor de código (Visual Studio Code, Sublime, etc.)
-
-## 👨‍💻 Autor
-
-**Cristian Penagos**
-
-## 📄 Licencia
-
-MIT License – puedes usar, copiar o modificar estos archivos como quieras.
