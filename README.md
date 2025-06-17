@@ -10,8 +10,4 @@ Este repositorio contiene una guía paso a paso para aprender JavaScript desde c
 5. Funciones
 6. Arrays
 7. Objetos
-8. Ejercicios Combinados
-
-## ✍️ Ejercicios sugeridos
-- Declara variables, usa operadores, escribe condicionales, funciones, arrays y objetos.
-- Combina todo en ejercicios prácticos.
+8. DOM
