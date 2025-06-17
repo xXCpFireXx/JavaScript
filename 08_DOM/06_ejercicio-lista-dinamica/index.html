@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Lista Dinámica</title></head>
+<body>
+  <input id="entrada" type="text" placeholder="Escribe algo" />
+  <button onclick="agregar()">Agregar</button>
+  <ul id="lista"></ul>
+  <script>
+    function agregar() {
+      const texto = document.getElementById("entrada").value;
+      if (texto.trim() !== "") {
+        const li = document.createElement("li");
+        li.textContent = texto;
+        document.getElementById("lista").appendChild(li);
+        document.getElementById("entrada").value = "";
+      }
+    }
+  </script>
+</body>
+</html>

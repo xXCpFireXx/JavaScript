@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Modificar Elementos</title></head>
+<body>
+  <h1 id="titulo">Texto original</h1>
+  <button onclick="modificar()">Modificar</button>
+  <script>
+    function modificar() {
+      const titulo = document.getElementById("titulo");
+      titulo.textContent = "Texto modificado";
+      titulo.style.color = "red";
+    }
+  </script>
+</body>
+</html>

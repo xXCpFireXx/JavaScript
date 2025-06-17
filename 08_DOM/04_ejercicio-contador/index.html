@@ -1,0 +1,15 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Contador de Clics</title></head>
+<body>
+  <button id="contador">Clics: 0</button>
+  <script>
+    let count = 0;
+    document.getElementById("contador").addEventListener("click", function() {
+      count++;
+      this.textContent = "Clics: " + count;
+    });
+  </script>
+</body>
+</html>
