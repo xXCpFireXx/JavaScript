@@ -24,9 +24,3 @@ Este repositorio contiene una guía paso a paso para aprender JavaScript desde c
 ## ✍️ Ejercicios sugeridos
 - Declara variables, usa operadores, escribe condicionales, funciones, arrays y objetos.
 - Combina todo en ejercicios prácticos.
-
-## 👨‍💻 Autor
-**Cristian Penagos**
-
-## 📄 Licencia
-MIT License
