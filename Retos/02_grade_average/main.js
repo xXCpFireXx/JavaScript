@@ -29,7 +29,7 @@ const gradeAverage = () =>{
     }
 
     if (sum === 0) {
-        notification(`Debes INGRESAR un VALOR`,"rgb(188, 71, 73)",2000)
+        notification(`Debes INGRESAR un VALOR VALIDO`,"rgb(188, 71, 73)",2000)
     } else {
         if (flag) {
         result_average = sum/5;
