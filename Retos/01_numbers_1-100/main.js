@@ -1,23 +1,26 @@
-let putNumber = document.getElementById('numbers');
+let listNumbers = document.getElementById('listNumbers');
 
-for (let index = 1; index <= 100; index++) {
+for (let i = 1; i <= 100; i++) {
 
-    let infoText = '';
+    let contentP = '';
+    let newElementP = document.createElement('p');
 
-    if (index % 3 === 0 && index % 5 === 0) {
-        infoText = 'FizzBuzz';
-    } else if (index % 5 === 0) {
-        infoText = 'Buzz';
-    } else if (index % 3 === 0) {
-        infoText = 'Fizz';
+    if (i%3 == 0 && i%5 == 0) {
+        contentP = 'FizzBuzz';
+        newElementP.textContent = contentP;
+        newElementP.style.color = "rgb(255, 255, 255)"
+    } else if (i%5 == 0) {
+        contentP = 'Buzz';
+        newElementP.textContent = contentP;
+        newElementP.style.color = "rgb(255, 255, 255)"
+    } else if (i%3 == 0) {
+        contentP = 'Fizz';
+        newElementP.textContent = contentP;
+        newElementP.style.color = "rgb(255, 255, 255)"
     } else {
-        infoText = index;
-    }
-
-    /* console.log(index)  */
-
-    // Agrego el texto al DOM
-    const newElement = document.createElement('p');   // crea un "objeto" que representa el nuevo párrafo
-    newElement.textContent = infoText;                // Este paso le da contenido al párrafo que acabas de crear
-    putNumber.appendChild(newElement);                // Agrega ese párrafo al contenedor en la página
+        contentP = i;
+        newElementP.textContent = contentP;
+        newElementP.style.color = "rgb(242, 232, 207)"
+    }   
+    listNumbers.appendChild(newElementP);
 }
