@@ -1,65 +1,50 @@
 let sum = 0;
 let result_average = 0;
-let element_span = document.getElementById("result_average");
+let element_p = document.getElementById("result_average");
 let element_status_grade = document.getElementById("status_grade"); 
+let flag = true;
 
-//Primera Opción
 const gradeAverage = () =>{
-    let number1 = document.getElementById("number1");
-    let number2 = document.getElementById("number2");
-    let number3 = document.getElementById("number3");
-    let number4 = document.getElementById("number4");
-    let number5 = document.getElementById("number5");
-
-    if (condition) {
-        
-    } else {
-        
-    }
-    
-    number1 = Number(number1.value);
-    number2 = Number(number2.value);
-    number3 = Number(number3.value);
-    number4 = Number(number4.value);
-    number5 = Number(number5.value);
-    
-    let total = [number1, number2, number3, number4, number5]
     for (let i = 0; i<5; i++) {
-        sum = sum + total[i]
+        let rawValue = document.getElementById(`number${i+1}`).value;
+
+        let valueNumber = Number(rawValue);
+
+        if (isNaN(valueNumber)) {
+            notification(`El valor "${rawValue}" no es un número`,"rgb(188, 71, 73)",2000)
+            clear()
+            flag = false
+            element_status_grade.textContent = ""
+            element_p.textContent = ""
+        } else if(valueNumber<=-1){
+            notification(`El valor "${rawValue}" es un número NEGATIVO`,"rgb(188, 71, 73)",2000)
+            
+            clear()
+            flag = false
+            element_status_grade.textContent = ""
+            element_p.textContent = ""
+        }else {
+            sum = sum + valueNumber;            
+        }
     }
-    
-    result_average = sum/total.length;
 
-    element_span.textContent = result_average.toFixed(1);
-    statusGrade(result_average)
-    clear()
-    result_average = 0
-}
-
-
-//Segunda Opción
-const gradeAverage1 = () => {
-
-    for (let i = 0; i<5; i++) {
-        sum = sum + Number(document.getElementById(`number${i+1}`).value);
+    if (flag) {
+        result_average = sum/5;
+        element_p.textContent = `El promedio es: ${result_average.toFixed(1)}`;
+        statusGrade(result_average)
+        element_p.style.display = "block"
     }
 
-    result_average = sum/5;
-
-    element_span.textContent = result_average.toFixed(1);
-
-    statusGrade(result_average)
     clear()
-    sum = 0
     result_average = 0
 }
 
 const statusGrade = (average) =>{
-
     if (average>=3) {
-        element_status_grade.textContent = "El ESTUDIANTE APROBÓ!"
+        notification("El ESTUDIANTE APROBÓ!","rgb(167, 201, 87)",-1)        
     } else {
-        element_status_grade.textContent = "El ESTUDIANTE REPROBÓ!"
+        notification("El ESTUDIANTE REPROBÓ!","rgb(188, 71, 73)",-1)
+        element_p.style.borderColor = "rgb(188, 71, 73)"
     }
     sum = 0
 }
@@ -71,3 +56,17 @@ const clear = () =>{
     number4.value = "";
     number5.value = "";
 }
+
+const notification = (text, color, duration) =>{
+    Toastify({
+        text: text,
+        duration: duration,
+        close: true,
+        gravity: "top",
+        position: "center",
+        stopOnFocus: true,
+        style: {background: color}
+        }).showToast();
+}
+
+
