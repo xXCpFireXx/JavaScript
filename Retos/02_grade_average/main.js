@@ -24,19 +24,23 @@ const gradeAverage = () =>{
             element_status_grade.textContent = ""
             element_p.textContent = ""
         }else {
-            sum = sum + valueNumber;            
+            sum = sum + valueNumber;  
         }
     }
 
-    if (flag) {
+    if (sum === 0) {
+        notification(`Debes INGRESAR un VALOR`,"rgb(188, 71, 73)",2000)
+    } else {
+        if (flag) {
         result_average = sum/5;
         element_p.textContent = `El promedio es: ${result_average.toFixed(1)}`;
         statusGrade(result_average)
         element_p.style.display = "block"
     }
-
+}
     clear()
     result_average = 0
+
 }
 
 const statusGrade = (average) =>{
