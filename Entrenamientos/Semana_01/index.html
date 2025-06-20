@@ -1,13 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>Interactive Message System</title>
+
+    <!-- Toastify.js library for notifications -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
+
 <body>
-    
+    <div class="container">
+        <h1>Welcome to the Interactive Messaging System!</h1>
+        <p>Choose a mode</p>
+
+        <!-- Mode selection buttons -->
+        <div class="buttons">
+            <!-- Console mode button -->
+            <div class="btn" onclick="consoleMode()"><a>Console Mode</a></div>
+            <!-- Graphic mode button -->
+            <div class="btn" onclick="showGraphicMode()"><a>Graphic Mode</a></div>
+        </div>
+
+        <!-- Hidden form for graphic mode -->
+        <section id="graphicMode" class="graphicMode">
+            <h1>You are in the Graphic Mode</h1>
+            <div class="form">
+                <!-- Text input for name -->
+                <input id="nameForm" type="text" placeholder="Your name">
+                <!-- Text input for age -->
+                <input id="ageForm" type="text" placeholder="Your age">
+                <!-- Button to submit graphic form -->
+                <button onclick="graphicMode()">Send</button>
+            </div>
+        </section>
+    </div>
 </body>
+
 </html>
-<script src="./sistema_interactivo.js"></script>
+<script src="./sistema_interactivo.js" defer></script>
+
+<!-- Toastify.js script -->
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
