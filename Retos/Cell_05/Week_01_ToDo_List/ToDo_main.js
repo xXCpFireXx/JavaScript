@@ -9,7 +9,7 @@ input.addEventListener("keydown", function(e) {
 
 const addTask = () => {
     let valueTask = input.value.trim();
-    console.log(valueTask)
+    valueTask = capitalizeFirstLetter(valueTask);
     
     if (valueTask === ""){
         notification("⚠️ Error: You have to type something!","#d90429",4000)
@@ -52,6 +52,10 @@ const taskCompleted = (checkbox, li) => {
 const deleteTask = (li) => {
   li.remove();
 }
+
+const capitalizeFirstLetter = (str) => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
 
 const notification = (text, color, duration) =>{
     Toastify({
