@@ -1,0 +1,121 @@
+/* Import Google font Jost */
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Custom color variables */
+:root {
+    --prussian-blue: #273043ff;
+    --cool-gray: #9197aeff;
+    --mint-cream: #eff6eeff;
+    --mauve: #faa6ffff;
+    --royal-purple: #7353baff;
+    --russian-violet: #2f195fff;
+    --rich-black: #0f1020ff;
+    --pink-lavender: #efc3f5ff;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: var(--prussian-blue);
+    font-family: "Jost", sans-serif;
+    display: flex;
+    color: black;
+}
+
+h1{
+    font-size: 2rem;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 40rem;
+    width: 90%;
+    background-color: var(--mint-cream);
+    margin: 5rem auto;
+    border-radius: 1.5rem;
+    padding: 2rem;
+}
+.inputList{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
+    margin: 1rem;
+}
+
+.inputList input{
+    padding: 0.5rem;
+    border-radius: 0.8rem;
+    width: 100%;
+    max-width: 20rem;
+    outline: none;
+    border: none;
+    font-family: "Jost", sans-serif;
+    font-size: 1.2rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.inputList input:focus{
+    transform: scale(1.02);
+    transition: 0.1s ease-in-out;
+}
+
+.inputList button{
+    padding: 0.5rem 1rem;
+    border-radius: 0.8rem;
+    border: none;
+    font-family: "Jost", sans-serif;
+    font-size: 1.2rem;
+    color: white;
+    background-color: var(--prussian-blue);
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+}
+
+.inputList button:hover{
+    transform: scale(1.02);
+    transition: 0.1s ease-in-out;
+}
+
+.list {
+    width: 100%;
+    max-width: 30rem;
+}
+
+.list li{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 1.2rem;
+    justify-content: space-between;
+}
+
+.task.checked .headTask {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.list li input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.list li button {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url(./img/delete.svg);
+    background-size: cover;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
