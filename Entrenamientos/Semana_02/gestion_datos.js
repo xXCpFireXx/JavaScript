@@ -1,48 +1,43 @@
-// Inicialización del proyecto
-console.log("¡Gestión de Datos con Objetos, Sets y Maps!");
+// Project Initialization
+console.log("Data Management with Objects, Sets, and Maps!");
 
-// Definir el objeto productos
-
-const productos = {
-  1: { id: 1, nombre: "Laptop", precio: 1500 },
-  2: { id: 2, nombre: "Mouse", precio: 25 },
-  3: { id: 3, nombre: "Teclado", precio: 50 },
+// Define the products object
+const products = {
+  1: { id: 1, name: "Laptop", price: 1500 },
+  2: { id: 2, name: "Mouse", price: 25 },
+  3: { id: 3, name: "Keyboard", price: 50 },
 };
 
-// console.log("Objeto productos: ", productos);
-
-// Crear un Set con los nombres de los productos
-const setProductos = new Set(
-  Object.values(productos).map((producto) => producto.nombre)
+// Create a Set with the names of the products
+const productSet = new Set(
+  Object.values(products).map((product) => product.name)
 );
-// console.log("Set de productos únicos: ", setProductos);
 
-// Crear un Map para agregar categorías a los productos
-const mapProductos = new Map([
-  ["Electrónica", ["Laptop"]],
-  ["Accesorios", ["Mouse", "Teclado"]]
+// Create a Map to add categories to the products
+const productMap = new Map([
+  ["Electronics", ["Laptop"]],
+  ["Accessories", ["Mouse", "Keyboard"]]
 ]);
 
-// console.log("Map de productos y categorías: ", mapProductos);
-
-// Recorrer el objeto productos
-for (const id in productos) {
-  console.log(`Producto ID: ${id}, Detalles: `, productos[id]);
+// Iterate over the products object
+for (const id in products) {
+  console.log(`Product ID: ${id}, Details: `, products[id]);
 }
 
-// Recorrer el Set de productos
-for (const producto of setProductos) {
-  console.log("Producto único: ", producto);
+// Iterate over the Set of products
+for (const product of productSet) {
+  console.log("Unique Product: ", product);
 }
 
-// Recorrer el Map de productos
-mapProductos.forEach((productos, categoria) => {
-    productos.forEach(producto => {
-        console.log(`Categoría: ${categoria}, Producto: ${producto}`);
-    });
+// Iterate over the Map of products
+productMap.forEach((products, category) => {
+  products.forEach(product => {
+    console.log(`Category: ${category}, Product: ${product}`);
+  });
 });
 
-console.log("Pruebas completas de gestión de datos:");
-console.log("Listas de productos (Objeto): ", productos);
-console.log("Lista de productos únicos (Set): ", setProductos);
-console.log("Categorías y productos (Map): ", mapProductos);
+console.log("Complete Data Management Tests:");
+console.log("Product Lists (Object): ", products);
+console.table(products);
+console.log("Unique Product List (Set): ", productSet);
+console.log("Categories and Products (Map): ", productMap);
