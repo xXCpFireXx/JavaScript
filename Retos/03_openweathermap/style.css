@@ -54,7 +54,11 @@ body {
 
 .infoWeather{
     display: flex;
-    margin-top: 2rem;
+    margin-top: 1rem;
     flex-wrap: wrap;
     gap: 1.5rem;
+    background-color: var(--tropical-indigo);
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+
 }
