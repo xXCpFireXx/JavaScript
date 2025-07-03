@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Interacción con Servidores y Consumo de APIs</title>
+
+    <!-- Toastify.js library for notifications -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Choose a option</h1>
+
+        <!-- Mode selection buttons -->
+        <div class="buttons">
+            <!-- Console mode button -->
+            <div class="btn" onclick="postProduct()"><a>Add Product</a></div>
+            <!-- Graphic mode button -->
+            <div class="btn" onclick="getProducts()"><a>Show Products</a></div>
+            <div class="btn" onclick="putProduct()"><a>Update Product</a></div>
+            <div class="btn" onclick="deleteProduct()"><a>Delete Product</a></div>
+        </div>
+
+        <!-- Hidden form for graphic mode -->
+<!--         <section id="graphicMode" class="graphicMode">
+            <h1>You are in the Graphic Mode</h1>
+            <div class="form">
+                <input id="nameForm" type="text" placeholder="Your name">
+            
+                <input id="ageForm" type="text" placeholder="Your age">
+            
+                <button onclick="graphicMode()">Send</button>
+            </div>
+        </section> -->
+    </div>
+
+    <script src="./gestion_api.js"></script>
+
+    <!-- Toastify.js script -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+
+</html>
