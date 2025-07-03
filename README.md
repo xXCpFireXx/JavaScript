@@ -11,3 +11,7 @@ Este repositorio contiene una guía paso a paso para aprender JavaScript desde c
 6. Arrays
 7. Objetos
 8. DOM
+9. API
+10. Docs
+* Entrenamientos
+* Retos
