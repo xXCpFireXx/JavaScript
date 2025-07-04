@@ -2,39 +2,46 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Interaction with Servers and API Consumption</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interaction with Servers and API Consumption</title>
 
-    <!-- Toastify.js library for notifications -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Toastify.js CSS for notification styling -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Choose a option</h1>
-        <div class="buttons">
-            <div class="btn" onclick="showModalAddProducts()"><a>Add Product</a></div>
-            <div class="btn" onclick="showProductsInModal()"><a>Show Products</a></div>
-            <div class="btn" onclick="putProduct()"><a>Update Product</a></div>
-            <div class="btn" onclick="deleteProduct()"><a>Delete Product</a></div>
-        </div>
-    </div>
+  <!-- Main container -->
+  <div class="container">
+    <h1>Choose an option</h1>
     
-    <dialog id="modal" closedby="any">
-        <div id="modalContent">
-<!--         <h2>Update Product</h2>
-        <input type="number" placeholder="ID to update" id="updateId">
-        <input type="text" placeholder="New Name" id="updateName">
-        <input type="number" placeholder="New Price" id="updatePrice">
-        <button onclick="updateProduct()">Update</button> -->
-        </div>
-    </dialog>
-    <script src="./gestion_api.js"></script>
+    <!-- Action buttons to interact with products -->
+    <div class="buttons">
+      <!-- Button to add a new product -->
+      <div class="btn" onclick="showModalAddProducts()"><a>Add Product</a></div>
+      <!-- Button to display all products -->
+      <div class="btn" onclick="showProductsInModal()"><a>Show Products</a></div>
+      <!-- Button to update an existing product -->
+      <div class="btn" onclick="putProduct()"><a>Update Product</a></div>
+      <!-- Button to delete a product -->
+      <div class="btn" onclick="deleteProduct()"><a>Delete Product</a></div>
+    </div>
+  </div>
 
-    <!-- Toastify.js script -->
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <!-- Dialog element used for modal -->
+  <dialog id="modal" closedby="any">
+    <!-- Content inside the modal will be inserted here dynamically -->
+    <div id="modalContent"></div>
+  </dialog>
+
+  <!-- Link to external JavaScript file that contains all product logic -->
+  <script src="./gestion_api.js"></script>
+
+  <!-- Toastify.js library for toast notifications -->
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 
 </html>
