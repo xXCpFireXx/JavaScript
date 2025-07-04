@@ -3,11 +3,21 @@ const modalContent = document.getElementById("modalContent");
 
 const showModalAddProducts = () => {
   modalContent.innerHTML = `
-    <h2>Add Product</h2>
-    <input type="text" placeholder="Name" id="productName">
-    <input type="number" placeholder="Price" id="productPrice">
-    <button onclick="postProduct()">Save</button>`;
+    <h2 class="titleModal">Add Product</h2>
+    <div class="addProductsContent">
+      <input type="text" placeholder="Name" id="productName">
+      <input type="number" placeholder="Price" id="productPrice">
+      <button class="btnAddProducts" onclick="postProduct()">Save</button>
+    </div>`;
   modal.showModal();
+
+  const inputAddProduct = document.getElementById("productPrice");
+  inputAddProduct.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        postProduct();
+    }
+  });
+
 }
 
 const showProductsInModal = async () => {
@@ -17,9 +27,9 @@ const showProductsInModal = async () => {
     modalContent.innerHTML = "<p>There isn't products.</p>";
   } else {
     const tableHTML = `
-      <h2>Product List</h2>
+      <h2 class="titleModal">Product List</h2>
       <table>
-        <tr><th>ID</th><th>NAME</th><th>PRICE</th></tr>
+        <tr class="trTable"><th>ID</th><th>NAME</th><th>PRICE</th></tr>
         ${products.map(product => `
           <tr>
             <td>${product.id}</td>

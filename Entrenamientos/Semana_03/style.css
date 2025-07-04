@@ -9,19 +9,16 @@
 
 /* Custom color variables */
 :root {
-    --black-bean-2: #38040eff;
-    --rosewood: #640d14ff;
-    --falu-red: #800e13ff;
-    --auburn: #ad2831ff;
-    --naples-yellow: #ffe169ff;
-    --mustard: #fad643ff;
-    --saffron: #edc531ff;
-    --gold-metallic: #dbb42cff;
-    --satin-sheen-gold: #c9a227ff;
-    --dark-goldenrod: #b69121ff;
-    --dark-goldenrod-2: #a47e1bff;
-    --golden-brown: #926c15ff;
-    --field-drab: #805b10ff;
+    --rich-black: #001219ff;
+    --midnight-green: #005f73ff;
+    --dark-cyan: rgb(13, 201, 204);
+    --tiffany-blue: #94d2bdff;
+    --vanilla: #e9d8a6ff;
+    --gamboge: #ee9b00ff;
+    --alloy-orange: #ca6702ff;
+    --rust: #bb3e03ff;
+    --rufous: #ae2012ff;
+    --auburn: #9b2226ff;
 }
 
 html {
@@ -29,7 +26,7 @@ html {
 }
 
 body {
-    background-color: var(--dark-goldenrod-2);
+    background-color: var(--rich-black);
     font-family: "Jost", sans-serif;
     display: flex;
     color: white;
@@ -46,7 +43,76 @@ body {
     margin: 5rem auto;
 }
 
+dialog{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    padding: 3rem;
+    border: none;
+    border-radius: 1rem;
+    position: fixed;
+}
+
+dialog::backdrop{
+    background: rgba(0, 0, 0, 0.63);
+}
+
+.titleModal{
+    font-size: 2rem;
+    text-align: center;
+}
+
+table{
+    font-size: 1.2rem;
+    text-align: justify;
+    border-collapse: collapse;
+}
+
+table th, td {
+    padding: 1rem;
+}
+
+.trTable{
+    background-color: var(--tiffany-blue);
+    text-align: center;
+}
+
 /* Clamp() -> Allow the font to have a max and min */
+.addProductsContent{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+dialog input, button{
+    padding: 0.5rem;
+    font-family: "Jost", sans-serif;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 3.5px solid var(--rich-black);
+}
+
+dialog input:focus{
+    outline: none;
+    border-bottom: 3.5px solid var(--dark-cyan);
+}
+
+.btnAddProducts{
+    background-color: var(--dark-cyan);
+    color: white;
+    border-radius: 0.5rem;
+
+    border: none;
+    font-size: 1.2rem;
+}
+
+.btnAddProducts:hover{
+    cursor: pointer;
+    background-color: var(--midnight-green);
+    transform: scale(1.05);
+    transition: 0.2s ease-in-out;
+}
 
 h1 {
     font-size: clamp(2rem, 5vw, 3rem);
@@ -80,7 +146,7 @@ p {
 .btn:hover {
     transform: scale(1.02);
     transition: 0.2s ease-in-out;
-    border-color: var(--naples-yellow);
+    border-color: var(--dark-cyan);
 }
 
 .btn a {
@@ -89,64 +155,4 @@ p {
 
 .btn a:hover {
     font-weight: 500;
-}
-
-/* Section that shows the part in graphic mode */
-.graphicMode {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid;
-    padding: 3rem 0;
-    border-radius: 3rem;
-}
-
-.graphicMode h1 {
-    text-align: center;
-    font-size: clamp(2rem, 5vw, 3rem);
-    margin: 1rem;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 50%;
-    justify-content: center;
-}
-
-.form input {
-    padding: 0.8rem;
-    border-radius: 3rem;
-    color: white;
-    background-color: var(--rich-black);
-    border-color: var(--auburn);
-    border: 3px solid var(--auburn);
-    font-size: clamp(1rem, 5vw, 1.5rem);
-    font-family: "Jost", sans-serif;
-}
-
-.form input:focus {
-    outline: none;
-}
-
-.form input::placeholder {
-    color: rgb(240, 239, 239);
-}
-
-.form button {
-    padding: 0.8rem;
-    border-radius: 3rem;
-    font-size: clamp(1rem, 5vw, 1.5rem);
-    font-family: "Jost", sans-serif;
-    border: none;
-    cursor: pointer;
-}
-
-.form button:hover {
-    transform: scale(1.02);
-    transition: 0.2s ease-in-out;
-    background-color: rgb(219, 219, 219);
 }
