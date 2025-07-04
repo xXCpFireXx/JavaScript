@@ -13,6 +13,15 @@
     --rosewood: #640d14ff;
     --falu-red: #800e13ff;
     --auburn: #ad2831ff;
+    --naples-yellow: #ffe169ff;
+    --mustard: #fad643ff;
+    --saffron: #edc531ff;
+    --gold-metallic: #dbb42cff;
+    --satin-sheen-gold: #c9a227ff;
+    --dark-goldenrod: #b69121ff;
+    --dark-goldenrod-2: #a47e1bff;
+    --golden-brown: #926c15ff;
+    --field-drab: #805b10ff;
 }
 
 html {
@@ -20,7 +29,7 @@ html {
 }
 
 body {
-    background-color: var(--black-bean-2);
+    background-color: var(--dark-goldenrod-2);
     font-family: "Jost", sans-serif;
     display: flex;
     color: white;
@@ -71,7 +80,7 @@ p {
 .btn:hover {
     transform: scale(1.02);
     transition: 0.2s ease-in-out;
-    border-color: var(--auburn);
+    border-color: var(--naples-yellow);
 }
 
 .btn a {

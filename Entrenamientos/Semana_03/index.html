@@ -16,13 +16,13 @@
         <h1>Choose a option</h1>
         <div class="buttons">
             <div class="btn" onclick="showModalAddProducts()"><a>Add Product</a></div>
-            <div class="btn" onclick="getProducts()"><a>Show Products</a></div>
+            <div class="btn" onclick="showProductsInModal()"><a>Show Products</a></div>
             <div class="btn" onclick="putProduct()"><a>Update Product</a></div>
             <div class="btn" onclick="deleteProduct()"><a>Delete Product</a></div>
         </div>
     </div>
     
-    <dialog id="modal" closedby="any" open>
+    <dialog id="modal" closedby="any">
         <div id="modalContent">
 <!--         <h2>Update Product</h2>
         <input type="number" placeholder="ID to update" id="updateId">

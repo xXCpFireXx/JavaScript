@@ -14,23 +14,22 @@ const showProductsInModal = async () => {
   const products = await getProducts();
 
   if (products.length === 0) {
-    modalContent.innerHTML = "<p>No hay productos disponibles.</p>";
+    modalContent.innerHTML = "<p>There isn't products.</p>";
   } else {
     const tableHTML = `
       <h2>Product List</h2>
       <table>
-        <tr><th>ID</th><th>Name</th><th>Price</th></tr>
-        ${products.map(p => `
+        <tr><th>ID</th><th>NAME</th><th>PRICE</th></tr>
+        ${products.map(product => `
           <tr>
-            <td>${p.id}</td>
-            <td>${p.name}</td>
-            <td>$${p.price}</td>
+            <td>${product.id}</td>
+            <td>${product.name}</td>
+            <td>$${product.price}</td>
           </tr>`).join('')}
       </table>
     `;
     modalContent.innerHTML = tableHTML;
   }
-
   modal.showModal();
 };
 
@@ -40,7 +39,8 @@ const getProducts = async () => {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error("Error al obtener los productos:", error);
+    notification("Error obtaining the products","#e12c2c",3000);
+    console.error("Error obtaining the products::", error);
     return [];
   }
 };
@@ -51,7 +51,7 @@ const postProduct = async () =>{
   const products = await getProducts();
 
   if (!nameProduct || !priceProduct) {
-    alert("Complete each field");
+    notification("Complete each field","#e12c2c",3000);
     return;
   }
 
@@ -63,8 +63,10 @@ const postProduct = async () =>{
     body: JSON.stringify(newProduct)
   })
   .then(response => response.json())
-  .then(data => console.log("Product added", data))
-  .catch(error => console.error("Error to add new product:", error))
+  .then(data => alert(`Product ${data.name} added successfully`))
+  .catch(error => {notification("Error to add new product","#e12c2c",3000)
+    console.error("Error to add new product:", error)
+  })
   modal.close();
 }
 
@@ -94,6 +96,7 @@ const notification = (text, color, duration) => {
     },
   }).showToast();
 };
+
 // Function that allow put the first letter in uppercase
 const capitalizeFirstLetter = (str) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
