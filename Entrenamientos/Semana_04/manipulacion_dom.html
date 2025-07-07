@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta configuration for character encoding and responsive design -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Page title -->
+  <title>Interactive Interface with Data Persistence</title>
+
+  <!-- Link to custom CSS file -->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Link to Toastify CSS for toast notification styling -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
+<body>
+  <!-- Main content area -->
+  <main>
+    <!-- User input form -->
+    <form id="userForm">
+      <!-- Name field -->
+      <div class="labelsInputs">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <!-- Age field -->
+      <div class="labelsInputs">
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" required>
+      </div>
+
+      <!-- Buttons to save and clear data -->
+      <div class="btns">
+        <button type="button" id="saveButton">Save Data</button>
+        <button type="button" id="clearButton">Clear Data</button>
+      </div>
+    </form>
+
+    <!-- Output area to display stored data -->
+    <div id="output" class="output"></div>
+  </main>
+
+  <!-- JavaScript file for DOM manipulation and logic -->
+  <script type="module" src="./manipulacion_dom.js"></script>
+
+  <!-- Toastify.js script for notifications -->
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+
+</html>

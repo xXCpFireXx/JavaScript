@@ -1,0 +1,115 @@
+/* ========== FONT ========== */
+/* Import Google Font "Jost" for general text styling */
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ========== RESET ========== */
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========== COLORS ========== */
+/* Define custom CSS variables for consistent color usage */
+:root {
+  --rich-black: #001219ff;
+  --midnight-green: #005f73ff;
+  --dark-cyan: rgb(13, 201, 204);
+  --tiffany-blue: #94d2bdff;
+  --vanilla: #e9d8a6ff;
+  --gamboge: #ee9b00ff;
+  --alloy-orange: #ca6702ff;
+  --rust: #bb3e03ff;
+  --rufous: #ae2012ff;
+  --auburn: #9b2226ff;
+}
+
+/* ========== LAYOUT ========== */
+
+/* Set full height for html element */
+html {
+  height: 100%;
+}
+
+/* Set base styles for body: background, font, layout */
+body {
+  background-color: var(--rich-black);
+  font-family: "Jost", sans-serif;
+  color: white;
+  display: flex;
+  height: 100%;
+}
+
+/* Main container styling and layout */
+main {
+  max-width: 160rem;
+  width: 90%;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* General input and button styles */
+form input, button {
+  padding: 0.8rem;
+  font-family: "Jost", sans-serif;
+  font-size: 1rem;
+  border: none;
+  border-radius: 1rem;
+  border-bottom: 3.5px solid var(--rich-black);
+}
+
+/* Highlight input when focused */
+main form input:focus {
+  outline: none;
+  border-bottom: 3.5px solid var(--rufous);
+}
+
+/* Style for label + input wrapper */
+.labelsInputs {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  gap: 0.2rem;
+}
+
+/* Label styling */
+.labelsInputs label {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+/* Button container layout */
+.btns {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+/* Button base styles */
+.btns button {
+  background-color: var(--rufous);
+  color: white;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Button hover effect */
+.btns button:hover {
+  background-color: var(--auburn);
+  transform: scale(1.02);
+  transition: 0.08s ease-in-out;
+  cursor: pointer;
+}
+
+/* Output text style */
+.output {
+  flex-wrap: wrap;
+  font-size: 2rem;
+  padding: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
