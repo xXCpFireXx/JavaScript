@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --navbar-background: #f2eae1;
+  --pink: #b600fe;
+  --purple: #6a00fe;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: rgb(240, 240, 240);
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  height: 100%;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 20rem;
+  background-color: var(--navbar-background);
+  color: black;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+}
+
+.img-profile {
+  width: 10rem;
+}
+
+.img-profile img {
+  width: 100%;
+  border-radius: 30rem;
+}
+
+.title,
+.name-profile,
+.role-profile {
+  text-align: center;
+}
+
+.title {
+  text-shadow: -1px -1px 0 var(--pink), 1px -1px 0 var(--pink),
+    -1px 1px 0 var(--pink), 1px 1px 0 var(--pink);
+}
+
+.role-profile {
+  color: var(--pink);
+}
+
+.container-nav ul li,
+.logout {
+  display: grid;
+}
+
+.container-nav{
+    width: 70%;
+}
+
+.container-nav ul li{
+    grid-template-columns: 0.5fr 1fr;
+    font-size: 1.2rem;
+    margin: 2.5rem 0;
+    gap: 1.5rem;
+}
+
+.container-nav ul li img{
+    width: 1.5rem;
+    justify-self: right;
+}
+.logout{
+    display: flex;
+    gap: 2rem;
+}
