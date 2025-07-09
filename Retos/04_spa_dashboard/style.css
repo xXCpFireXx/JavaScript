@@ -17,10 +17,16 @@ html {
 }
 
 body {
+  display: flex;
   background-color: rgb(240, 240, 240);
   color: white;
   font-family: "Montserrat", sans-serif;
   height: 100%;
+}
+
+.main-content{
+  padding: 3rem;
+  color: black;
 }
 
 .navbar {
@@ -83,4 +89,13 @@ body {
 .logout{
     display: flex;
     gap: 2rem;
+}
+
+/* Lists Users */
+
+.head-list-users{
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 1rem;
 }
