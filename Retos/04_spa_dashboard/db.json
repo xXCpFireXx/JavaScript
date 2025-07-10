@@ -1,44 +1,28 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Nombre Completo",
-      "email": "correo@ejemplo.com",
-      "phone": "1234567890",
-      "enrollNumber": "12345678901234",
-      "dateOfAdmission": "08-Dec-2021"
+      "id": "2",
+      "name": "Camila acosta",
+      "email": "suarezalejo2621@gmail.com",
+      "phone": 234234234234,
+      "enrollNumber": "49312370823540",
+      "dateOfAdmission": "05-Jul-2025"
+    }
+  ],
+  "user": [
+    {
+      "id": "1",
+      "name": "Cristian Penagos",
+      "role": "admin",
+      "user": "cpfire",
+      "password": "1122334455"
     },
     {
-      "id": 2,
-      "name": "Camila",
-      "email": "Suarezalejo26@gmail.com",
-      "phone": 324243,
-      "enrollNumber": "93426819980441",
-      "dateOfAdmission": "2025-07-03"
-    },
-    {
-      "id": 3,
-      "name": "Dasd",
-      "email": "suarezalejo26@gmail.com",
-      "phone": 213213213,
-      "enrollNumber": "41805759058120",
-      "dateOfAdmission": "01-Jul-2025"
-    },
-    {
-      "id": 4,
-      "name": "Pablo",
-      "email": "sadasd@gmdisdf.com",
-      "phone": 35651661,
-      "enrollNumber": "64336956185968",
-      "dateOfAdmission": "14-Feb-2025"
-    },
-    {
-      "id": 5,
-      "name": "Daniel",
-      "email": "sadasd@gmdisdf.com",
-      "phone": 32616616,
-      "enrollNumber": "38049885183298",
-      "dateOfAdmission": "04-Jul-2025"
+      "id": "2",
+      "name": "Camila Acosta",
+      "role": "user",
+      "user": "militasee",
+      "password": "112233"
     }
   ]
 }
