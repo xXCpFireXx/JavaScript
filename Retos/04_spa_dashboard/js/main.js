@@ -66,7 +66,7 @@ const showUsers = async () => {
       <td>${user.phone}</td>
       <td>${user.enrollNumber}</td>
       <td>${user.dateOfAdmission}</td>
-      <td>
+      <td class="actions-tbody">
         <button class="btn-edit" data-user-id="${user.id}">✏️</button>
         <button class="btn-delete" data-user-id="${user.id}">🗑️</button>
       </td>
@@ -78,6 +78,7 @@ const showUsers = async () => {
   callNewUser();
   callEditUser();
   callDeleteUser();
+  hideButtons();
 };
 
 const addUsers = async () => {
@@ -229,7 +230,7 @@ const setupLoginForm = async () => {
 
       navigate("/");
     } else {
-      alert("Incorrect username or password");
+      notification("Incorrect username or password", "#e12c2c", 3000);
     }
   });
 }
@@ -237,6 +238,7 @@ const setupLoginForm = async () => {
 const renderUserProfile = () => {
   const nameProfile = document.querySelector(".name-profile");
   const roleProfile = document.querySelector(".role-profile");
+  const userImg = document.querySelector(".img-profile-user");
 
   if (nameProfile && roleProfile) {
     const name = localStorage.getItem("userName");
@@ -246,24 +248,43 @@ const renderUserProfile = () => {
 
     if (role === "admin") {
       roleProfile.textContent = "Administrator";
-
-      
-
-
+      userImg.src = "../img/admin-img.png"; 
     } else if (role === "user") {
       roleProfile.textContent = "User";
+      userImg.src = "../img/User-avatar.png";
     } else {
       roleProfile.textContent = "";
     }
   }
 };
 
+const hideButtons = () =>{
+  const role = localStorage.getItem("role");
+  const buttonsActions = document.querySelector(".buttons-action");
+  const buttonsActionsTbody = document.querySelectorAll(".actions-tbody");
+  const buttonAddUser = document.getElementById("add-new-user");
+
+  if (role === "admin") {
+      buttonsActions.style.display = "block"
+      buttonAddUser.style.display = "block"
+      buttonsActionsTbody.forEach((btn) =>{
+        btn.style.display = "block"
+      })
+    } else {
+      buttonsActions.style.display = "none"
+      buttonAddUser.style.display = "none"
+      buttonsActionsTbody.forEach((btn) =>{
+        btn.style.display = "none"
+      })
+    }
+}
 
 const logoutBtn = document.querySelector(".logout");
 if (logoutBtn) {
   logoutBtn.addEventListener("click", () => {
     localStorage.setItem("Auth", "false");
-    localStorage.setItem("role", "false");
+    localStorage.removeItem("role");
+    localStorage.removeItem("userName");
     navigate("/login");
   });
 }

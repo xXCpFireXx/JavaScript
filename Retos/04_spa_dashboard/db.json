@@ -2,11 +2,19 @@
   "users": [
     {
       "id": "2",
-      "name": "Camila acosta",
+      "name": "Camila Acosta",
       "email": "suarezalejo2621@gmail.com",
-      "phone": 234234234234,
+      "phone": 2222222222222,
       "enrollNumber": "49312370823540",
       "dateOfAdmission": "05-Jul-2025"
+    },
+    {
+      "id": "2",
+      "name": "Camila acosta",
+      "email": "suarezalejo2621@gmail.com",
+      "phone": 3234234234,
+      "enrollNumber": "83425316836768",
+      "dateOfAdmission": "08-Jul-2025"
     }
   ],
   "user": [
