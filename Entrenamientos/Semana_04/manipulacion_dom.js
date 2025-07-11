@@ -35,7 +35,7 @@ const addData = () => {
   const age = parseInt(ageInput.value);
 
   // Validate input and save to localStorage
-  if (name && !isNaN(age)) {
+  if (name && !isNaN(age) && age>0) {
     localStorage.setItem("userName", name);
     localStorage.setItem("userAge", age);
     notification(`"${name}" and "${age}" added successfully!`, "#a7c957", 3000);

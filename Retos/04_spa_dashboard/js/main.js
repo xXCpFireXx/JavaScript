@@ -82,15 +82,32 @@ const showUsers = async () => {
 };
 
 const addUsers = async () => {
-  const name = capitalizeFirstLetter(document.getElementById("name").value.trim());
+  const name = capitalizeFirstLetter(
+    document.getElementById("name").value.trim()
+  );
   const email = document.getElementById("email").value.trim();
   const phone = parseInt(document.getElementById("phone").value);
-  const date = formatDate(document.getElementById("date").value);
+  const dateInput = document.getElementById("date").value;
+  const date = formatDate(dateInput);
+
+  const selectedDate = new Date(dateInput);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  if (selectedDate > today) {
+    notification("You cannot select a future date", "#e12c2c", 3000);
+    return;
+  }
+
   const users = await getUsers();
   const rollNumber = random14Digits();
 
+  const ids = users.map((u) => Number(u.id));
+  const maxId = ids.length > 0 ? Math.max(...ids) : 0;
+  const newId = maxId + 1;
+
   const newUser = {
-    id: String(users.length + 1),
+    id: String(newId),
     name,
     email,
     phone,
@@ -108,6 +125,10 @@ const addUsers = async () => {
 };
 
 const putUser = async () => {
+  const dateInput = document.getElementById("date");
+  const today = new Date().toISOString().split("T")[0];
+  dateInput.max = today;
+
   const userId = localStorage.getItem("editUserId");
   if (!userId) {
     notification("No user selected to edit", "#e12c2c", 3000);
@@ -123,7 +144,9 @@ const putUser = async () => {
     document.getElementById("name").value = user.name;
     document.getElementById("email").value = user.email;
     document.getElementById("phone").value = user.phone;
-    document.getElementById("date").value = formatDateForInput(user.dateOfAdmission);
+    document.getElementById("date").value = formatDateForInput(
+      user.dateOfAdmission
+    );
 
     const form = document.getElementById("formEditUser");
     form.addEventListener("submit", async (e) => {
@@ -145,6 +168,12 @@ const putUser = async () => {
         notification("Error updating user", "#e12c2c", 3000);
       }
     });
+
+    const cancelEdit = document.getElementById("cancel-edit");
+    cancelEdit.addEventListener("click", (e) => {
+      e.preventDefault();
+      navigate("/users");
+    });
   } catch (error) {
     notification("Error loading user data", "#e12c2c", 3000);
     navigate("/users");
@@ -164,6 +193,10 @@ const callNewUser = () => {
 };
 
 const postNewUser = () => {
+  const dateInput = document.getElementById("date");
+  const today = new Date().toISOString().split("T")[0];
+  dateInput.max = today;
+
   const form = document.getElementById("formNewUser");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -209,11 +242,10 @@ const callDeleteUser = () => {
 /* =================== LOGIN =================== */
 
 const setupLoginForm = async () => {
-
   const usersSystem = await getUsersSystem();
 
   const form = document.getElementById("login-spa");
-    form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const inputUser = document.getElementById("user").value.trim();
@@ -233,7 +265,7 @@ const setupLoginForm = async () => {
       notification("Incorrect username or password", "#e12c2c", 3000);
     }
   });
-}
+};
 
 const renderUserProfile = () => {
   const nameProfile = document.querySelector(".name-profile");
@@ -248,7 +280,7 @@ const renderUserProfile = () => {
 
     if (role === "admin") {
       roleProfile.textContent = "Administrator";
-      userImg.src = "../img/admin-img.png"; 
+      userImg.src = "../img/admin-img.png";
     } else if (role === "user") {
       roleProfile.textContent = "User";
       userImg.src = "../img/User-avatar.png";
@@ -258,26 +290,26 @@ const renderUserProfile = () => {
   }
 };
 
-const hideButtons = () =>{
+const hideButtons = () => {
   const role = localStorage.getItem("role");
   const buttonsActions = document.querySelector(".buttons-action");
   const buttonsActionsTbody = document.querySelectorAll(".actions-tbody");
   const buttonAddUser = document.getElementById("add-new-user");
 
   if (role === "admin") {
-      buttonsActions.style.display = "block"
-      buttonAddUser.style.display = "block"
-      buttonsActionsTbody.forEach((btn) =>{
-        btn.style.display = "block"
-      })
-    } else {
-      buttonsActions.style.display = "none"
-      buttonAddUser.style.display = "none"
-      buttonsActionsTbody.forEach((btn) =>{
-        btn.style.display = "none"
-      })
-    }
-}
+    buttonsActions.style.display = "block";
+    buttonAddUser.style.display = "block";
+    buttonsActionsTbody.forEach((btn) => {
+      btn.style.display = "block";
+    });
+  } else {
+    buttonsActions.style.display = "none";
+    buttonAddUser.style.display = "none";
+    buttonsActionsTbody.forEach((btn) => {
+      btn.style.display = "none";
+    });
+  }
+};
 
 const logoutBtn = document.querySelector(".logout");
 if (logoutBtn) {
